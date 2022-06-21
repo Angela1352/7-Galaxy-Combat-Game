@@ -20,7 +20,7 @@ class Power extends GameObject {
       if (obj instanceof Spaceship) {
         if (collidingWith(obj)) {
           coin.rewind();
-          coin.play();
+          if (!mute) coin.play();
           lives--;
 
           obj.lives++;

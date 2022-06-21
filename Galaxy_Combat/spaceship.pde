@@ -21,24 +21,17 @@ class Spaceship extends GameObject {
     //managing guns
     cooldown++;
     if (space && cooldown >= threshold) {
-      objects.add(new Bullet());
+      objects.add(new Bullet(x, y));
       shoot.rewind();
-      shoot.play();
+      if (!mute) shoot.play();
       cooldown = 0;
     }
-
-    ////collisions
-    //int i = 0;
-    //while (i < objects.size()) {
-    //GameObject obj = objects.get(i);
-    //if (obj instanceof EnemyBullet) {
-    //if (collidingWith(obj)) {
-    //hit.rewind();
-    //hit.play();
-    //lives--;
-    //obj.lives = 0;
-    //    }
-    //  }
+    //else if (space && cooldown>= threshold) {
+    //  objects.add(new Bullet(x-10, y));
+    //  objects.add(new Bullet(x+10, y));
+    //  shoot.rewind();
+    //  shoot.play();
+    //  cooldown = 0;
     //}
 
     if (up)      vy = -5;
@@ -86,14 +79,14 @@ class Spaceship extends GameObject {
 
     if (lives > 5) lives = 5;
 
-    if (score > 20) {
+    if (score > 10) {
       threshold = 27;
-    } else if (score > 40) {
+    } else if (score > 20) {
       threshold = 25;
-    } else if (score > 60) {
+    } else if (score > 30) {
       threshold = 22;
     } else {
-      threshold  = 30;
+      threshold = 30;
     }
   }
 }

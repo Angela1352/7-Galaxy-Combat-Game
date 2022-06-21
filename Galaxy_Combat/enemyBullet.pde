@@ -15,18 +15,14 @@ class EnemyBullet extends GameObject {
     super.act();
     if (offScreen()) lives = 0;
 
-    ////collisions
-    //int i = 0;
-    //while (i < objects.size()) {
-    //  GameObject obj = objects.get(i);
-    //  if (obj instanceof Spaceship) {
-    //    if (collidingWith(obj)) {
-    //      hit.rewind();
-    //      hit.play();
-    //      lives = 0;
-    //      obj.lives--;
-    //    }
-    //  }
+    //collisions
+    //if (collidingWith(player1)) {
+    //  hit.rewind();
+    //  hit.play();
+    //  lives = 0;
+    //  player1.lives--;
+    // fill(red);
+    // rect(0, 0, 800, 600);
     //}
   }
 }

@@ -38,6 +38,6 @@ void infoClicks() {
   if (mouseX > 350 && mouseX < 440 && mouseY > 435 && mouseY < 495) {
     mode = INTRO;
     click.rewind();
-    click.play();
+  if (!mute) click.play();
   }
 }

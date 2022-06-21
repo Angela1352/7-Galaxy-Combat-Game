@@ -75,25 +75,25 @@ void pauseClicks() {
   //pause button
   if (mouseX > 730 && mouseX < 775 && mouseY > 20 && mouseY < 65) {
     mode = GAME;
-    theme.play();
+    if (!mute) theme.play();
     click.rewind();
-    click.play();
+    if (!mute) click.play();
   }
 
   if (mouseX > 300 && mouseX < 500 && mouseY > 365 && mouseY < 440) {
     mode = GAME;
     click.rewind();
-    click.play();
+    if (!mute) click.play();
   }
 
   //home/restart button
   if (mouseX > 220 && mouseX < 300 && mouseY > 240 && mouseY < 320) {
     mode = INTRO;
     theme.rewind();
-    theme.play();
+    if (!mute) theme.play();
     reset();
     click.rewind();
-    click.play();
+    if (!mute) click.play();
   }
 
   //music button ------------------------------------------------------------
@@ -103,13 +103,14 @@ void pauseClicks() {
     stroke(255);
     line(380, 274, 424, 195);
     click.rewind();
-    click.play();
+   if (!mute)  click.play();
+    mute = !mute;
   }
 
   //info button
   if (mouseX > 500 && mouseX < 580 && mouseY > 240 && mouseY < 320) {
     mode = INFO;
     click.rewind();
-    click.play();
+   if (!mute)  click.play();
   }
 }

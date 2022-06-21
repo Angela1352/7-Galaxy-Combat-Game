@@ -1,17 +1,17 @@
 class Enemy2 extends GameObject {
 
   int cooldown, threshold;
-  int pwrcldwn, pwrthrsld;
+  // int pwrcldwn, pwrthrsld;
   int pwrcounter;
+  float number;
 
   Enemy2() {
     super(random(80, width-80), -50, 0, 5, 140, yellow, 1);
     threshold = 30;
     cooldown = threshold;
 
-    pwrthrsld  = 200;
-    pwrcldwn   = pwrthrsld;
     pwrcounter = 0;
+    number = random(1, 100);
   }
 
 
@@ -41,13 +41,8 @@ class Enemy2 extends GameObject {
           lives--;
           obj.lives = 0;
 
-          //power
-          pwrcldwn++;
-          if (pwrcldwn >= pwrthrsld) {
-            objects.add(new Power(x, y));
-            pwrcldwn = 0;
-          }
-          
+          //power 
+          if (number < 75) objects.add(new Power(x, y));
 
           //particles
           objects.add(new Particles(x, y, vx, vy));

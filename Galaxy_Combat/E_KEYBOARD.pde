@@ -4,7 +4,6 @@ void keyPressed() {
   if (keyCode == UP)    up     = true;
   if (keyCode == DOWN)  down   = true;
   if (key == ' ')       space  = true;
-  motor.play();
 }
 
 

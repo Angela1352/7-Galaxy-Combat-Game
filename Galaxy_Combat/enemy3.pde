@@ -20,9 +20,11 @@ class Enemy3 extends GameObject {
       if (obj instanceof Spaceship) {
         if (collidingWith(obj)) {
           hit.rewind();
-          hit.play();
+          if (!mute) hit.play();
           lives--;
           obj.lives--;
+          fill(red);
+          rect(0, 0, 800, 600);
         }
       }
       i++;

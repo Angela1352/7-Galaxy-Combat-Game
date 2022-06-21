@@ -34,7 +34,7 @@ void gameClicks() {
   if (mouseX > 730 && mouseX < 775 && mouseY > 20 && mouseY < 65) {
     mode = PAUSE;
     click.rewind();
-    click.play();
+    if (!mute) click.play();
   }
 }
 

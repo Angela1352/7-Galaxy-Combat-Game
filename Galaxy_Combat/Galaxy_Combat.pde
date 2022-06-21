@@ -34,7 +34,7 @@ PFont font1, font2, font3;
 
 //sound variables
 Minim minim;
-AudioPlayer theme, hit, click, shoot, motor, coin, die;
+AudioPlayer theme, hit, click, shoot, coin, die;
 
 
 //colour palette
@@ -48,11 +48,12 @@ color magenta     = #9C5EA6;
 
 
 //others
-int counter, counter2;
-int score; // lives;
+int counter, counter2, timer;
+int score;
 boolean icon1On, icon2On, icon3On;
 PImage selectedIcon;
 float vy;
+boolean mute;
 
 ArrayList<GameObject> objects;
 Spaceship player1;
@@ -72,6 +73,8 @@ void setup () {
   counter  = 0;
   counter2 = 0;
   score    = 0;
+  timer    = 5;
+  mute     = false;
 
   vy = random(0, height);
 
@@ -80,7 +83,6 @@ void setup () {
   hit     = minim.loadFile("hit.wav");
   click   = minim.loadFile("click.mp3");
   shoot   = minim.loadFile("shoot.mp3");
-  motor   = minim.loadFile("motor.wav");
   coin    = minim.loadFile("coin.mp3");
   die     = minim.loadFile("die.wav");
 
@@ -161,37 +163,9 @@ void reset() {
   counter  = 0;
   counter2 = 0;
   score    = 0;
+  timer    = 5;
 
   vy = random(0, height);
-
-  //minim   = new Minim(this);
-  //theme   = minim.loadFile("theme.mp3");
-  //hit     = minim.loadFile("hit.wav");
-  //click   = minim.loadFile("click.mp3");
-  //shoot   = minim.loadFile("shoot.mp3");
-  //motor   = minim.loadFile("motor.wav");
-  //coin    = minim.loadFile("coin.mp3");
-  //die     = minim.loadFile("die.wav");
-
-  //bg1     = loadImage("bg1.png");
-
-  //image1  = loadImage("image1.png");
-  //image2  = loadImage("image2.png");
-  //image3  = loadImage("image3.png");
-  //image4  = loadImage("image4.jpg");
-
-  //enemy1  = loadImage("enemy1.png");
-  //enemy2  = loadImage("enemy2.png");
-  //enemy3  = loadImage("enemy3.png");
-
-  //heart   = loadImage("heart.png");
-  //power   = loadImage("power.png");
-
-  //gameover1  = loadImage("gameover1.jpg");
-
-  //font1   = createFont("font1.ttf", 100);
-  //font2   = createFont("font2.ttf", 100);
-  //font3   = createFont("font3.otf", 100);
 
   selectedIcon = image1;
 
@@ -201,20 +175,14 @@ void reset() {
   }
 }
 
-//ASK TUESDAY:
-//-----how to make ship shootable ENEMY BULLET COLLISION CODE NOT WORKING
-//-----how to make particles not fly so far
+//stop all sounds in processing
+//boolean set game
+
+//----------------------make 2 info
+//----------------------screen flash green when powerup collected
+
 //-----stroke of bullet changes after shooting enemy
 
-//motor sound not working
-//make info button OK turn back to game in pause mode
-
-//how to make power up disappear after a while
-//powerup threshold higher
-
-//gameover counter not working
-
-//--make screen red when hit
 
 //SPECIAL THINGS TO ADD:
 //2 player??

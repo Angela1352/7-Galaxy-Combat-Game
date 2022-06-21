@@ -1,5 +1,5 @@
 void intro() {
-  theme.play();
+  if (!mute) theme.play();
   image(bg1, 150, 300, 1400, 600);
 
   //options button
@@ -56,7 +56,7 @@ void intro() {
 
 void introClicks() {
   click.rewind();
-  click.play();
+  if (!mute) click.play();
   if (mouseX > 670 && mouseX < 770 && mouseY > 25 && mouseY < 75) {
     mode = OPTIONS;
   } else if (mouseX > 710 && mouseX < 770 && mouseY > 125 && mouseY < 185) {

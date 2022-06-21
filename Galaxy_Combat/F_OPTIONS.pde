@@ -42,7 +42,7 @@ void optionClicks() {
   if (mouseX > 303 && mouseX < 489 && mouseY > 408 && mouseY < 448) {
     mode =  INTRO;
     click.rewind();
-    click.play();
+    if (!mute)   click.play();
   }
 
   if (mouseX > 145 && mouseX < 295 && mouseY > 205 && mouseY < 355) {
@@ -50,7 +50,7 @@ void optionClicks() {
     icon2On = false;
     icon3On = false;
     click.rewind();
-    click.play();
+    if (!mute)  click.play();
   }
 
   if (mouseX > 325 && mouseX < 475 && mouseY > 205 && mouseY < 355) {
@@ -58,7 +58,7 @@ void optionClicks() {
     icon2On = !icon2On;
     icon3On = false;
     click.rewind();
-    click.play();
+    if (!mute)  click.play();
   }
 
   if (mouseX > 505 && mouseX < 655 && mouseY > 205 && mouseY < 355) {
@@ -66,7 +66,7 @@ void optionClicks() {
     icon2On = false;
     icon3On = !icon3On;
     click.rewind();
-    click.play();
+   if (!mute)  click.play();
   }
 
   if (icon1On == true) {

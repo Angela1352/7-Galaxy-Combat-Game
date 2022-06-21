@@ -1,25 +1,22 @@
-int gamovrcounter;
+int gamovrcounter = 0;
 
 void gameover() {
 
   die.rewind();
-  die.play();
-
-  //setup
-  gamovrcounter = 0;
+ if (!mute)  die.play();
 
   theme.pause();
 
   //shake
   gamovrcounter += 1;
-  if (gamovrcounter < 50) {
+  if (gamovrcounter < 20) {
     image(gameover1, 360, 290, 1400, 650);
   }
-  if (gamovrcounter > 50) {
-    image(gameover1, 420, 310, 1400, 650);
+  if (gamovrcounter > 20) {
+    image(gameover1, 20, 310, 1400, 650);
   }
 
-  if (gamovrcounter == 100) gamovrcounter = 0;
+  if (gamovrcounter == 40) gamovrcounter = 0;
 
   textSize(60);
   fill(255);
@@ -32,7 +29,7 @@ void gameover() {
 
 void gameoverClicks() {
   click.rewind();
-  click.play();
+  if (!mute) click.play();
   mode = INTRO;
   theme.rewind();
   reset();
