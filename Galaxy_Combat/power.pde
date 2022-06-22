@@ -20,16 +20,11 @@ class Power extends GameObject {
       if (obj instanceof Spaceship) {
         if (collidingWith(obj)) {
           coin.rewind();
+          fill(green);
+          rect(0, 0, 800, 600);
           if (!mute) coin.play();
           lives--;
-
           obj.lives++;
-
-          ////power
-          //vx += 1;
-          //vy -= .5;
-          //textSize(100);
-          //text(vx, 400, 400);
         }
       }
       i++;

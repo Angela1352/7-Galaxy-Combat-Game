@@ -18,6 +18,7 @@ final int PAUSE     = 2;
 final int GAMEOVER  = 3;
 final int OPTIONS   = 4;
 final int INFO      = 5;
+final int INFO2     = 6;
 
 
 //key variables
@@ -28,13 +29,13 @@ boolean up, down, left, right, space;
 PImage bg1, image1, image2, image3, image4;
 PImage enemy1, enemy2, enemy3;
 PImage heart, power;
-PImage gameover1;
+PImage gameover1, gameover2, gameover3, gameover4, gameover5;
 PFont font1, font2, font3;
 
 
 //sound variables
 Minim minim;
-AudioPlayer theme, hit, click, shoot, coin, die;
+AudioPlayer theme, hit, click, shoot, coin, crash;
 
 
 //colour palette
@@ -73,7 +74,7 @@ void setup () {
   counter  = 0;
   counter2 = 0;
   score    = 0;
-  timer    = 5;
+  timer    = 4;
   mute     = false;
 
   vy = random(0, height);
@@ -84,7 +85,7 @@ void setup () {
   click   = minim.loadFile("click.mp3");
   shoot   = minim.loadFile("shoot.mp3");
   coin    = minim.loadFile("coin.mp3");
-  die     = minim.loadFile("die.wav");
+  crash   = minim.loadFile("crash.wav");
 
   bg1     = loadImage("bg1.png");
 
@@ -101,6 +102,10 @@ void setup () {
   power   = loadImage("power.png");
 
   gameover1  = loadImage("gameover1.jpg");
+  gameover2  = loadImage("gameover2.jpg");
+  gameover3  = loadImage("gameover3.jpg");
+  gameover4  = loadImage("gameover4.jpg");
+  gameover5  = loadImage("gameover5.jpg");
 
   font1   = createFont("font1.ttf", 100);
   font2   = createFont("font2.ttf", 100);
@@ -122,6 +127,7 @@ void draw () {
   else if (mode == GAMEOVER) gameover();
   else if (mode == OPTIONS)  options();
   else if (mode == INFO)     info();
+  else if (mode == INFO2)    info2();
   //else println("Error: Mode = " + mode);
 }
 
@@ -163,7 +169,7 @@ void reset() {
   counter  = 0;
   counter2 = 0;
   score    = 0;
-  timer    = 5;
+  timer    = 4;
 
   vy = random(0, height);
 
@@ -175,15 +181,10 @@ void reset() {
   }
 }
 
-//stop all sounds in processing
-//boolean set game
+//TO DO:
+//save galaxy from attack!!!
 
-//----------------------make 2 info
-//----------------------screen flash green when powerup collected
+//make game easier (add another powerup?? more guns??)
 
-//-----stroke of bullet changes after shooting enemy
-
-
-//SPECIAL THINGS TO ADD:
-//2 player??
-//highscore
+//pause: mute music button line
+//red enemy has yellow particles

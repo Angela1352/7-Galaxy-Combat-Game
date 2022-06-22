@@ -1,7 +1,7 @@
 class Particles extends GameObject {
 
   Particles(float x, float y, float vx, float vy, color c) {
-    super(x, y, random(-20, 20), random(-20, 20), 7, red, 1);
+    super(x, y, random(-10, 10), random(-10, 10), 7, red, 1);
   }
 
   Particles(float x, float y, float vx, float vy) {
@@ -20,7 +20,7 @@ class Particles extends GameObject {
     timer -= 1;
     if (timer < 0) {
       lives = 0;
-      timer = 5;
+      timer = 4;
     }
   }
 }

@@ -26,8 +26,8 @@ class Enemy2 extends GameObject {
     //shoot
     cooldown++;
     if (cooldown >= threshold) {
-      objects.add(new EnemyBullet(x-8, y+10, 0, 12, c));
-      objects.add(new EnemyBullet(x+6, y+10, 0, 12, c));
+      objects.add(new EnemyBullet(x-32, y+10, 0, 12, c));
+      objects.add(new EnemyBullet(x+30, y+10, 0, 12, c));
       cooldown = 0;
     }
 
@@ -42,7 +42,7 @@ class Enemy2 extends GameObject {
           obj.lives = 0;
 
           //power 
-          if (number < 75) objects.add(new Power(x, y));
+          if (number < 70) objects.add(new Power(x, y));
 
           //particles
           objects.add(new Particles(x, y, vx, vy));

@@ -23,4 +23,5 @@ void mouseReleased() {
   else if (mode == GAMEOVER) gameoverClicks();
   else if (mode == OPTIONS)  optionClicks();
   else if (mode == INFO)     infoClicks();
+  else if (mode == INFO2)    info2Clicks();
 }

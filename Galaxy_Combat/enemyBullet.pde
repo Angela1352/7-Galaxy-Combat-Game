@@ -3,11 +3,11 @@ class EnemyBullet extends GameObject {
   float c;
 
   EnemyBullet(float x, float y, float vx, float vy) {
-    super(x-2, y, vx, vy, 8, red, 1);
+    super(x-2, y, vx, vy-3, 8, red, 1);
   }
 
   EnemyBullet(float x, float y, float vx, float vy, float c) {
-    super(x-2, y, vx, vy, 8, yellow, 1);
+    super(x-2, y, vx, vy-2, 8, yellow, 1);
   }
 
 
@@ -16,13 +16,13 @@ class EnemyBullet extends GameObject {
     if (offScreen()) lives = 0;
 
     //collisions
-    //if (collidingWith(player1)) {
-    //  hit.rewind();
-    //  hit.play();
-    //  lives = 0;
-    //  player1.lives--;
-    // fill(red);
-    // rect(0, 0, 800, 600);
-    //}
+    if (collidingWith(player1)) {
+      hit.rewind();
+      if (!mute) hit.play();
+      lives = 0;
+      player1.lives--;
+      fill(red);
+      rect(0, 0, 800, 600);
+    }
   }
 }

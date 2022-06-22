@@ -84,6 +84,7 @@ void pauseClicks() {
     mode = GAME;
     click.rewind();
     if (!mute) click.play();
+    if (!mute) theme.play();
   }
 
   //home/restart button
@@ -98,19 +99,19 @@ void pauseClicks() {
 
   //music button ------------------------------------------------------------
   if (mouseX > 360 && mouseX < 440 && mouseY > 240 && mouseY < 320) {
-    theme.pause(); //stop?
     strokeWeight(8);
     stroke(255);
     line(380, 274, 424, 195);
     click.rewind();
-   if (!mute)  click.play();
+    if (!mute) click.play();
+    if (!mute) theme.play();
     mute = !mute;
   }
 
   //info button
   if (mouseX > 500 && mouseX < 580 && mouseY > 240 && mouseY < 320) {
-    mode = INFO;
+    mode = INFO2;
     click.rewind();
-   if (!mute)  click.play();
+    if (!mute) click.play();
   }
 }

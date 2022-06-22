@@ -1,4 +1,4 @@
-void info() {
+void info2() {
   stroke(255);
   strokeWeight(8);
   fill(magenta);
@@ -34,10 +34,11 @@ void info() {
 }
 
 
-void infoClicks() {
+void info2Clicks() {
   if (mouseX > 350 && mouseX < 440 && mouseY > 435 && mouseY < 495) {
-    mode = INTRO;
+    mode = GAME;
     click.rewind();
-  if (!mute) click.play();
+    if (!mute) click.play();
+    if (!mute) theme.play();
   }
 }
